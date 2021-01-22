@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import TodoItem from './TodoItem';
 
 // 3 props
 // 1. todos : An array of objects.
@@ -13,7 +14,8 @@ class TodoItemList extends Component {
         const {todos, onToggle, onRemove } = this.props;
         return (
             <div>
-
+                <TodoItem text="hello"></TodoItem>
+                <TodoItem text="react"></TodoItem>
             </div>
         );
     };

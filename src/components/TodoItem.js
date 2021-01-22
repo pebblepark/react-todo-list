@@ -9,9 +9,11 @@ import './TodoItem.css';
 // 5. onRemove : Functions to delete an item
 
 class TodoItem extends Component {
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props.checked !== nextProps.checked;
+    }
     render() {
         const { text, checked, id, onToggle, onRemove } = this.props;
-        console.log(id);
         return (
             <div className="todo-item" onClick={() => onToggle(id)}>
                 <div className="remove" onClick={(e) => {

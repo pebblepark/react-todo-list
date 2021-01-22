@@ -4,14 +4,16 @@ import Form from './components/Form';
 import TodoItemList from './components/TodoItemList';
 import Palette from './components/Palette';
 
+
+const colors = ['#343a40', '#f03e3e', '#12b886', '#228ae6'];
+
 class App extends Component {
   id = 0
 
   state = {
     input: '',
     todos: [],
-    color: '',
-    colors: ['#343a40', '#f03e3e', '#12b886', '#228ae6']
+    color: ''
   }
 
   handleChange = (e) => {
@@ -71,7 +73,7 @@ class App extends Component {
   }
 
   render() {
-    const { input,todos,color,colors } = this.state;
+    const { input,todos,color } = this.state;
 
     const {
       handleChange,
@@ -85,7 +87,7 @@ class App extends Component {
     return (
       <TodoListTemplate
         palette={
-          <Palette colors={colors} selected={handleSelected} />
+          <Palette colors={colors} selected={color} onSelected={handleSelected} />
         }
         form={
           <Form value={input} color={color} onKeyPress={handleKeyPress} onChange={handleChange} onCreate={handleCreate}/>

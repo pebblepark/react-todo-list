@@ -1,12 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import TodoListTemplate from './components/TodoListTemplate';
 
-function App() {
-  return (
-    <div>
-      App
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <TodoListTemplate>
+        template
+      </TodoListTemplate>
+    );
+  }
 }
 
 export default App;

@@ -11,6 +11,7 @@ import './TodoItem.css';
 class TodoItem extends Component {
     render() {
         const { text, checked, id, onToggle, onRemove } = this.props;
+        console.log(id);
         return (
             <div className="todo-item" onClick={() => onToggle(id)}>
                 <div className="remove" onClick={(e) => {

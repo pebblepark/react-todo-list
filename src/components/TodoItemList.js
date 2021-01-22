@@ -10,6 +10,10 @@ import TodoItem from './TodoItem';
 // When rendering a 'List', use it as a class type component rather than a functional type for component optimization
 
 class TodoItemList extends Component {
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props.todos !== nextProps.todos;
+    }
+
     render() {
         const {todos, onToggle, onRemove } = this.props;
 

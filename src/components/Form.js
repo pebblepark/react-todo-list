@@ -8,10 +8,10 @@ import './Form.css';
 // 4. onKeyPress : key press event from input
 //                *For this event, when the Enter key is pressed, it executes the same action as onCreate.*
 
-const Form = ({value, onChange, onCreate, onKeyPress}) => {
+const Form = ({value, color, onChange, onCreate, onKeyPress}) => {
     return (
         <div className="form">
-            <input value={value} onChange={onChange} onKeyPress={onKeyPress}/>
+            <input value={value} onChange={onChange} onKeyPress={onKeyPress} style={{color: color}}/>
             <div class="create-button" onClick={onCreate}>
                 Add
             </div>

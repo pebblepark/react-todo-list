@@ -13,7 +13,7 @@ class TodoItem extends Component {
         return this.props.checked !== nextProps.checked;
     }
     render() {
-        const { text, checked, id, onToggle, onRemove } = this.props;
+        const { text, color, checked, id, onToggle, onRemove } = this.props;
         return (
             <div className="todo-item" onClick={() => onToggle(id)}>
                 <div className="remove" onClick={(e) => {
@@ -22,7 +22,7 @@ class TodoItem extends Component {
                     // 연결되어 있는 onToggle이 onRemove -> onToggle 순으로 실행됨
                     onRemove(id)}
                 }>&times;</div>
-                <div className={`todo-text ${checked && 'checked'}`}>
+                <div className={`todo-text ${checked && 'checked'}`} style={{color:color}}>
                     <div>{text}</div>
                 </div>
                 {
